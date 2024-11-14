@@ -1,0 +1,24 @@
+
+________________________________________________________________________
+| AWS                                                                   |
+| _________________________________________                             |
+|| VPC(Virtual Private Cloud)             |                             |
+|| _________________   _________________  |                             |
+|||  public        |  |   Private       | |                             |
+|||  subnet        |  |   Subnet        | |                             |
+|||  (EC2 Instance)|  |   (EC2 Instance)| |                             |
+|||________________|  |_________________| |                             |
+||________________________________________|                             |
+_________________________________________________________________________
+
+Virtual Private Cloud : is an insolated, private bubble within AWS, that you can use to store and deploy your resources, such as EC2 instances, databases, or load balancers.
+
+VPC usually consist of Public and Private Subnet. 
+Public subnet : within the VPC has direct access to the internet. They are typically used to host resources such as WebServers, Load Balancers
+Private subnet : within the VPC do not have direct access to the internet and can only be accessed by authorized outside resources or resouces within the private subnet. They are typically used to host resources such as 
+Databases, Application Servers.
+
+EC2 Instance : is a AWS provided Virtual Machine. It’s one of the most common ways for customers to deploy and run applications in the cloud.
+
+Note: API Gateway itself is a fully managed service by AWS and is not directly hosted in any subnet of your VPC. AWS handles the infrastructure, scaling, and management of the API Gateway, so you don’t see or manage 
+the subnet where it runs.
