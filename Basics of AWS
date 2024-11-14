@@ -22,3 +22,4 @@ EC2 Instance : is a AWS provided Virtual Machine. It’s one of the most common 
 
 Note: API Gateway itself is a fully managed service by AWS and is not directly hosted in any subnet of your VPC. AWS handles the infrastructure, scaling, and management of the API Gateway, so you don’t see or manage 
 the subnet where it runs.
+
