@@ -1,0 +1,20 @@
+IP or Intenet Protocol
+IP is a set of rules that are used to govern the communication on the network.
+It defines how devices find each other, connect to each other and exchange data using IP Addresses
+
+IP Address
+In a layman's term we can compare IP Address to a postal address. How your postal address is used to locate your house and used by your relatives and friends to communicate with you, IP Address is used to locate the 
+system/server/node in a communication network or distributed system.
+Even your personal computer, laptop or tablet has a unique IP address, by which you device is identified on the network.
+In terms of Distributed System, IP Address provide a "location tag" for the server or node, and also enable communication and routing with other nodes. It ensures that messages from one node reach the correct destination 
+by directing them based on IP addresses. 
+
+Types of IP Address Version
+IPv4 : used 32-bit numeric dot-decimal notation that was abkle to serve 4B IP Addresses. 
+       Example : 192.22.178.109 
+                 Each dot seperated part in the above address is called an octet and can be any number between 0 - 255, which is represent uisng 8bit binary represenattion
+                 Thus, 4*8bit = 32bit
+IPv6 : uses 128-bit alphanumeric hexadecimal notation that is able to provide ~340e+36 IP Addresses. 
+       Example : 2001:0bea:85jd:0000:0000:8dh9:0307:09w8 
+                 Each colon seperated part in the above address is called an hextet, which is represent uisng 16bit binary represenattion
+                 Thus, 8*16bit = 128bit  
