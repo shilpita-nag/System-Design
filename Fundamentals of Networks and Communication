@@ -29,3 +29,36 @@ Applications deployed on AWS server usually have a combination of Public and Pri
 - Frontend Applications : are often deployed on Public Subent with a Public IP Address, to allow any user on the internet to access it.
 - Backend Applications : are deplyed on Private Subnet with a Private IP Address for internal communication within the VPC, while allowing the frontend services and other authorized services to communicate with it.
 
+Domain Name System(DNS)
+
+DNS baically help put a name to the IP addresses.
+
+Full Domain Name (google.com) -> Second Level Domain Name(google) + Top Level Domain Name(com)
+
+Top Level Domain Name: is the last part of the domain name, and is on the topmost level of the Domian Name Hierarchy.
+Second Level Domain Name : is the part of the domain name that is unique, and is typically choosen by a domain owner.
+Full Domain Name : is the combination of TLD and SLD, and is mapped to an unique IP address.
+
+How does DNS work?
+
+client
+ | ^
+ 1 8
+ V |
+_______________             ______________
+|              |-----2----->| Root Server |
+| DNS Resolver |<----3------|_____________|
+|______________|
+  ^ |    ^  |-------4------>--------------
+  | |    |----------5-------| TLD Server |
+  | |                       --------------  
+  | |------------6---------> ---------------------
+  |--------------7--------- |Authoratative Server |
+                            ----------------------
+
+DNS Resolver : is a recursive resolver, that acts as a middle man between a client and DNS Nameserver. It orchestrates the calls to various individual servers.
+
+Root DNS Servers : are manage by a small group organization under the coordination of ICANN. They direct the queries to appropriate TLD Servers eg: .com, .org
+TLD Servers : are managed by organisation known as registry operator. Each TLD is overseen by a specific registry. They direct queries to Authoratative Servers.
+Authoratative Servers : are managed by domain registrars like godaddy or individual domain owners. They provide the final answer to the DNS query by providing the IP address for the domain name.
+
