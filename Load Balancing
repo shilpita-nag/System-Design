@@ -1,0 +1,25 @@
+Load Balancing is the process of distributing load among multiple servers, such that no single server is overloaded.
+For example, In a resturant, if all customers come to the same waiter, the waiter will be exhausted and the customers will get slower service. 
+Load Balancer is like a maitre d' who will direct guests to different waiters, so that waiters are comfortable and customers get better service.
+
+Key benifits of Load Balancing :
+Higher Availability -  If one waiter has to take break, maitre d' will make sure that customers are still being served
+Lower Latency/ Higher Performance - Since the waiters are not overwhelmed, they will provide service faster
+Scalability - If more waiters are hired, maitre d' can take care of assigning customers to them, without the other waiters having to worry
+
+Load Balancing Algorithms :
+- Round Robin : The requests are sent in a sequestial manner. First request goes to first server, second to second and so on, once we reach the last server, 
+                next request comes to the first server
+- Weighted Round Robin : Each server is assigned a weight based on it's resources and processing power. Servers with higher weights receive more requests
+- Least Response Time : LB mointors the response time of each server and assigns the new requests to the servers with least response time.
+- Least Connection : LB mointors the the no. of connections for each server and assigns new requests to the server with least no. of active connections
+
+Other activities that LB can do:
+- Health Checks and Failovers : Continuously monitors health of servers, and stop sending requests to unhealthy servers
+- Traffic Shapping : Can implement Rate Limiting, throtling to protect against traffic spikes.
+- SSL/TLS Encryption/Decryption : Can decrypt incoming traffic and pass as plain traffic to the server.
+- Session Persistence : Make sure the same user traffic goes to the same server.
+- Caching : Can store information that are requested frequetly, to reduce server load.
+- Dynamic Scaling/ Autoscaling : Increase the no. of servers as traffic reaches a certain peak.
+- Monitoring/Tracing : Can assign tracing id to all incoming request, that can be used for traffic predictions and server performance.
+
