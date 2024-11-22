@@ -1,0 +1,23 @@
+Docker
+Docker allows you to pack you application and it's dependencies (code, libraries, configurations) into a container that can be then used to run on any laptop, server or cloud.
+Imagine you are a chef and you need a portable kitchen that you can take anywhere, to a festival, farmer's market etc. Docker is like that portable kitchen that will allow you 
+to pack everything you need to cook in a container and setup whereever needed.
+
+Docker Container
+Docker Container is a lightweight, standalone, executable package that has all the information needed to the run you application.
+In terms of our example, Docker container is the portable kitchen, that has the stove(environment), Recipie(application code) and Utensils(dependent libraries)
+
+Docker File
+Docker File, contains the steps that are needed to create the Docker Image.
+It is basically the instruction of how to build the image
+
+Docker Image
+Docker Image is a static file, that provides information that the container needs, i.e.
+- The application code
+- The enviornment needed to run the application code
+- How to start the application
+For the above example, imagine docker image is a set of instruction that are needed in order to setup the portable kitchen and start cooking.
+
+In Target:
+
+
