@@ -1,0 +1,31 @@
+ACID and BASE as two priciples that are used to manage database and transactions
+
+ACID :
+Atomicity - A transaction is an all-or-none operation. It is successful if all the steps are successful, if even one step fails, DB makes sure all the other steps are rolled back.
+            Eg: When you make a payment, if amount is debited from your account, it must creadit to the receivers account, else the whole transcationed is rolled back and the amount 
+                is credited back to your account.
+Consistency - A transaction takes the DB from one valid state to another.
+              Eg: If supposed amount Account A ($300) transfers $100 to Account B($400). If the transaction succeeds Account A has $200 and Account B has $500 making the total of 
+                  of the two accounts $700. Now if the db crashes then also the DB ensures that the sum of amount in both the account is $700, no money can be lost in the process.
+Isolation - A transaction is independent of the other transactions
+            Eg: Transaction 1 - transfers amonut $100 from Account A to B
+                Transaction 2 - checks the balance of Account A.
+                Without Isolation, Transaction 2 can see a itermediate state when $100 is debited from Account A but has not yet been credited to Account B, making the record 
+                inconsistent.
+                With isolation Transaction 2, will either show the state before or after Transaction 1, depending on the state of tarnsaction 1.
+Durability - A transaction once committed, will never be lost, even in case of DB crash. Once the commit happens data is stored in a disk.
+
+Used mainly in Banking, Health and Telecommunication Industry, ecommerce payemnt and inventory management
+Used when focus is more on Consistency and Integrity of data
+Databases with ACID Principles - Postgres, Cockroach DB (Distributed DB with ACID)
+
+BASE :
+Basically Avaliable - The DB gaurantees response at all time, meaning it will always respond to arequest, even it the response does not contain the most recent changes
+Soft state - The system may change overtime due to the async propagation of data to different nodes.
+Eventual Consistency - The System does not gaurantee that all nodes will have the same data instantaneously, but will become consistent eventually.
+
+Used mainly in handling social media likes, comments, Content Delivery like Netflix
+Used when focus is more on Availabilty and Scalability
+Databases with BASE Principles - Casandra, DynamoDB
+
+            
