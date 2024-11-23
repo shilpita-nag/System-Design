@@ -1,1 +1,25 @@
 CAP Theorem
+
+CAP stands for Consistency, Availability and Partition Tolerance.
+Consistency : All nodes of a distributed system have the same data, ensuring every read has the same data or error
+Availability : The system always responds when a request is made, even if the data is not in the most current state.
+Partition Tolerance : The system continues to operate even when the communication link between some node breaks in a distributed system.
+
+CAP Theorem states that, when a network partition (network failure) happens, as system can be either Available or Consistent. Thus, grouping systems into 3 main categories:
+CA Systems - Systems that are available and ensure consistency but cannot tolerate network partition 
+             Eg: Relational Database
+                 C : Uses ACID properties to ensure all nodes have the same data
+                 A : Respond to all requests as long as there is no partition
+                 Cannot handle partition, as soon as partition occurs the system stops being distributed
+AP Systems - In case of network partition, the system will be available but some nodes might not have the most recent data.
+             Eg: Apache Casandra
+                 P : Replicates data in multiple nodes to handle partition
+                 A : The system gives a non-errornous response, even during network partition. The response might be servered from a replica node and might not contatin the latest 
+                     state but a response is always served
+                 In order to be available, these systems provide eventual consistency, thus making data temporarily different in different nodes
+CP Systems - In case of network partition, the system might not be available to all nodes not being consistent.
+             Eg: HBase
+                 C : Ensures the write has happened successfully for all nodes before read request
+                 P : Handles patrition by using mechanism like HDFS(Hadoop Distributed File System). The system mantains consistency using WAL(Write Ahead Log) and replicates 
+                     data across all nodes.
+                 If the entire quorum of nodes are not available during a network partition, the system may reject some requests to ensure consistency.
